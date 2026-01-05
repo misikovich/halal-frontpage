@@ -87,9 +87,9 @@
             height: 200px;
             background:
                 radial-gradient(circle, var(--gold) 10%, transparent 10%),
-                repeating-linear-gradient(var(--white) 0px, var(--white) 20px, var(--gold) 20px, var(--gold) 40px);
+                repeating-linear-gradient(#004900 0px, var(--white) 20px, var(--gold) 20px, var(--gold) 40px);
             background-size: 50px 50px;
-            opacity: 0.3;
+            /* opacity: 0.3; */
         }
 
         footer {
@@ -140,6 +140,20 @@
             transform: scale(2.5);
             transition: transform 1.5s linear;
         }
+
+        .images {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 200;
+        }
+
+        .images img {
+            width: 150px;
+            height: 150px;
+            object-fit: stretch;
+            margin: 10px;
+        }
     </style>
 </head>
 
@@ -162,7 +176,13 @@
                 Ассаламу алейкум ва рахьматуллахи ва баракатуху!
             </div>
 
-            <div class="islamic-pattern"></div>
+            <div class="islamic-pattern">
+                <div class="images">
+                    <img src="assets/sob.jpg" alt="">
+                    <img src="assets/xec.jpg" alt="">
+                    <img src="assets/to.jpg" alt="">
+                </div>
+            </div>
 
             <div class="quote">
                 «Ла илаха илла Ллах, Мухьаммад расулу Ллах»<br>
