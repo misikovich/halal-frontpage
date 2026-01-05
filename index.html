@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Марша вог1ийла Чечня! — Добро пожаловать в Чечню!</title>
+    <style>
+        :root {
+            --green: #008000;
+            /* Зелёный — Ислам и природа */
+            --white: #ffffff;
+            --red: #ff0000;
+            /* Красный — мужество */
+            --gold: #ffd700;
+            /* Золотой орнамент */
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom, var(--green) 65%, var(--white) 10%, var(--red) 35%);
+            color: white;
+            text-align: center;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            position: relative;
+        }
+
+        .ornament-left {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100px;
+            height: 300px;
+            background: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .ornament-pattern {
+            width: 80%;
+            height: 80%;
+            background: repeating-linear-gradient(45deg,
+                    var(--gold),
+                    var(--gold) 10px,
+                    transparent 10px,
+                    transparent 20px),
+                repeating-linear-gradient(-45deg,
+                    var(--gold),
+                    var(--gold) 10px,
+                    transparent 10px,
+                    transparent 20px);
+            border: 4px solid var(--gold);
+        }
+
+        h1 {
+            font-size: 3em;
+            margin: 20px 0;
+            text-shadow: 2px 2px 4px black;
+        }
+
+        .greeting {
+            font-size: 2em;
+            margin: 50px 0;
+        }
+
+        .quote {
+            font-style: italic;
+            font-size: 1.5em;
+            background: rgba(0, 0, 0, 0.4);
+            padding: 30px;
+            border-radius: 15px;
+            max-width: 800px;
+            margin: 50px auto;
+        }
+
+        .islamic-pattern {
+            height: 200px;
+            background:
+                radial-gradient(circle, var(--gold) 10%, transparent 10%),
+                repeating-linear-gradient(var(--white) 0px, var(--white) 20px, var(--gold) 20px, var(--gold) 40px);
+            background-size: 50px 50px;
+            opacity: 0.3;
+        }
+
+        footer {
+            margin-top: auto;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        @media (max-width: 768px) {
+            .ornament-left {
+                position: static;
+                width: 100%;
+                height: 100px;
+                margin-bottom: 20px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+        }
+
+        #main-opener {
+            display: flex;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1000;
+            background: #008000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #open-main {
+            padding: 20px 40px;
+            font-size: 2em;
+            background: var(--gold);
+            color: var(--white);
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            font-family: 'Times New Roman', Times, serif;
+            color: #000;
+        }
+
+        #mainwebsite {
+            transform: scale(2.5);
+            transition: transform 1.5s linear;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="main-opener">
+        <button onclick="openMain()" id="open-main">ЗАЙТИ</button>
+    </div>
+
+    <div class="thesite" id="mainwebsite">
+        <header>
+            <div class="ornament-left">
+                <div class="ornament-pattern"></div>
+            </div>
+            <h1>Маршалла воI, Нохчийн Республика!</h1>
+            <p>Добро пожаловать в гордую землю вайнахов</p>
+        </header>
+
+        <main>
+            <div class="greeting">
+                Ассаламу алейкум ва рахьматуллахи ва баракатуху!
+            </div>
+
+            <div class="islamic-pattern"></div>
+
+            <div class="quote">
+                «Ла илаха илла Ллах, Мухьаммад расулу Ллах»<br>
+                Нет бога кроме Аллаха, и Мухаммад — посланник Аллаха.
+            </div>
+
+            <p style="font-size: 1.5em; margin: 50px;">
+                Чечня — земля гор, мужества и веры.<br>
+                Марша вог1ийла — вперёд к свободе!
+            </p>
+        </main>
+
+        <footer>
+            <p>С любовью к родной земле © 2026</p>
+            <p>Аллах1у Акбар!</p>
+        </footer>
+    </div>
+
+    <audio loop id="main-music" src="music/main.mp3"></audio>
+    <audio id="eagle-music" src="music/eagle.mp3"></audio>
+
+    <script>
+        const mainMusic = document.getElementById('main-music');
+        const eagleMusic = document.getElementById('eagle-music');
+        const mainOpener = document.getElementById('main-opener');
+        const mainwebsite = document.getElementById('mainwebsite');
+
+        const openMain = () => {
+            mainOpener.style.display = 'none';
+            mainMusic.play();
+            eagleMusic.play();
+            mainwebsite.style.transform = 'scale(1)';
+
+        }
+    </script>
+
+</body>
+
+</html>
